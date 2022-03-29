@@ -113,10 +113,67 @@ _Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
 
 Un robot holonome possède 4 roues indépendantes les unes des autres, il faut donc contrôler 4 moteurs indépendamments les uns des autres. Pour savoir quel moteur activer et comment l'activer vous pouvez vous pencher sur ce [projet](https://github.com/Clerbout-Francois/Kinematics_holonomic_robot_MATLAB) durant lequel j'ai simulé une vue de haut d'un robot holonome et ses déplacements en fonctions des entrées sur chaque moteur. Cela peut vous permettre de comprendre les instructions contenues dans mes différents codes.
 
-Dans ce README, je ne présenterai que le fonctionnement du programme robot_holonome_serveur_local.ino. Pour information, la fonction **ledcWrite** du programme robot_holonome_telephone.ino est équivalente à la fonction **digitalWrite** du programme robot_holonome_serveur_local.ino. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
+Dans ce README, je ne présenterai que le fonctionnement du programme robot_holonome_serveur_local.ino (du début du code à la fin). Pour information, la fonction **ledcWrite** du programme robot_holonome_telephone.ino est équivalente à la fonction **digitalWrite** du programme robot_holonome_serveur_local.ino. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_1.png?raw=true)
-_Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
+
+_Figure 2: Capture d'écran de l'initialisation des variables d'état du serveur local._
+
+Ici, on initialise des variables de type String qui nous serviront par la suite lorsqu'on voudra connaître la valeur actuelle du serveur local (c'est-à-dire dans quel déplacement nous sommes actuellement).
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_2.png?raw=true)
+
+_Figure 2: Capture d'écran de la définiton du délai après lequel la connexion est coupée._
+
+On définit un délai de 200 000 ms, soit 200 secondes (bien trop important, on pourrait le réduire à 30 000 ms = 30 secondes ce qui serait déjà suffisant) afin d'avoir le temps de pouvoir expliquer les déplacements du robot entre chaque clic de souris.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_3.png?raw=true)
+
+_Figure 2: Capture d'écran du paramétrage des pins de l'ESP32._
+
+Pour chaque moteur nous devons lui donner une consigne de sens de rotation ainsi qu'une valeur de rotation. C'est pourquoi nous devons déclarer 8 pins en tant que sorties (OUTPUT), 2 par moteur, ce qui signifie que l'on va "écrire" des valeurs sur ces pins.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_4.png?raw=true)
+
+_Figure 2: Capture d'écran des commandes pour connecter l'ESP32 au réseau internet._
+
+Dans le premier bloc, on écrit sur le moniteur série de l'IDE Arduino que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande WiFi.begin(ssid, password) on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_5.png?raw=true)
+
+_Figure 2: Capture d'écran des consignes pour une rotation dans le sens des aiguilles d'une montre du robot._
+
+Dans la suite du programme, on compare le contenu du lien dans lequel j'ai choisi de mettre des informations sur l'état du robot (ATTENTION : on peut le faire car ce ne ce sont pas des informations sensibles mais pour le bon développement web d'un site cette pratique est à bannir absolument !!! :scream:).
+
+Dans la condition (if (header.indexOf(......))), on lit les informations contenues dans le header de la requête HTML. Si celle-ci est de la forme "GET /rotation_horaire/on" alors on rentre dans cette boucle de commandes. En écrivant la valeur HIGH sur les pins concernant les consignes de sens de rotation (32, 0, 26 et 2) cela indique au moteur qu'il doit tourner dans le sens des aiguilles d'une montre (et inversement pour LOW). En écrivant la valeur HIGH sur les pins concernant la valeur de rotation des moteurs (33, 4, 27 et 15) on fait tourner le moteur au maximum de sa vitesse (et on met le moteur à l'arrêt en écrivant la valeur LOW).
+
+Par étude de la cinématique, on sait que si tous les moteurs tournent dans le même sens et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_6.png?raw=true)
+
+_Figure 2: Capture d'écran des consignes pour la réalisation d'une diagonale vers l'avant et la droite du robot._
+
+Après étude de la cinématique de ce robot holonome, on sait qu'il faut que les moteurs 1 et 4 tournent et que les moteurs 2 et 3 sont à l'arrêt (c'est pourquoi on écrit la valeur LOW sur les valeurs de rotation des moteurs 2 et 3 tandis qu'on écrit la valeur HIGH sur les moteurs 1 et 4). De plus, il faut que le moteur 1 tourne dans le sens des aiguilles d'une montre (d'où la valeur HIGH pour le sens de rotation du moteur 1) et dans le sens inverse des aiguilles d'une montre pour le moteur 4 (d'où la valeur LOW).
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_7.png?raw=true)
+
+_Figure 2: Capture d'écran de la création du HTML et du style CSS de la page web._
+
+Sur cette capture d'écran, vous pouvez retrouver la définition des classes button et button2 (pour les boutons de couleur verte et les boutons de couleur grise) ainsi que le ":hover" qui permet à un bouton sur lequel on pointe la souris de changer de couleur (rouge dans notre cas). Les différents id permettent de fixer la position des différents boutons sur la page web.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_8.png?raw=true)
+
+_Figure 2: Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour la rotation dans le sens des aiguilles d'une montre._
+
+Sur cette capture d'écran vous pouvez retrouver l'affichage du titre de la page web (premier bloc) et l'affichage du bouton de la rotation dans le sens des aiguilles d'une montre. C'est ici que l'on étudie la valeur de rotation_horaire, si la rotation horaire n'est pas active alors on peut l'activer en cliquant sur le bouton qui est de couleur verte et si la rotation est active alors le bouton est gris et on peut arrêter de mouvement en cliquant sur le bouton.
+
+On fonctionne de la même manière pour les 9 autres boutons.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_9.png?raw=true)
+
+_Figure 2: Capture d'écran de la fermeture de la connexion._
+
+Ici, on ferme la connexion et onn l'indique sur le moniteur série.
 
 ***
 <a name="english_version_"/>
