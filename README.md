@@ -1,8 +1,8 @@
-# Holonomic robot for education
+# Holonomic robot for education (french and english versions...because it is for education)
 
 <a name="top_"/>
 
-Pour le moment, vous pouvez retrouver ce petit robot au sein du Fablab de JUNIA ISEN Lille et bien sûr chez moi !! :monocle_face:
+Pour le moment, vous pouvez retrouver ce petit robot au sein du Fablab de JUNIA ISEN Lille...et bien sûr chez moi !! :monocle_face:
 
 **VERSION FRANCAISE :** vous pouvez retrouver toutes les explications en français [ici](#french_version_) pour réaliser ce projet. Amusez-vous bien !! :partying_face: Vous pouvez trouver les composants et leurs références en [bas](#liste_) de cette page.
 
@@ -66,7 +66,7 @@ Pour cela, suivez les étapes suivantes :
 
 
 
-
+A COMPLETER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 <a name="serveur_"/>
 
@@ -84,7 +84,7 @@ _Figure 2: Informations à renseigner afin de permettre à l'ESP32 de se connect
 
 Une fois ces informations saisies, vous pouvez téléverser le programme sur l'ESP32.
 
-(Si cette erreur se produit lors d'une tentative de téléchargement (téléversement) : "A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header", Appuyez sur le bouton BOOT tout au long du téléchargement jusqu'à ce que "Connecting" disparaisse pour laisser place au téléchargement).
+(Si cette erreur se produit lors d'une tentative de téléchargement (téléversement) : "A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header", Appuyez sur le bouton BOOT tout au long du téléchargement jusqu'à ce que "Connecting" disparaisse de l'écran de l'IDE Arduino pour laisser place au téléchargement).
 
 Le programme une fois téléversé, l'ESP32 va se connecter au réseau internet renseigné et vous verrez apparaître l'écran suivant sur votre moniteur série qui vous indiquera l'adresse IP de votre serveur local :
 
@@ -92,11 +92,31 @@ Le programme une fois téléversé, l'ESP32 va se connecter au réseau internet 
 
 _Figure 2: Moniteur série indiquant que l'ESP32 a réussi à se connecter au réseau internet._
 
-Vous n'avez plus qu'à saisir l'adresse IP indiquée dans votre navigateur de la manière suivante :
+**/!\ Equipement (ordinateur, tablette, téléphone, télé...) connecté sur le même réseau internet que l'ESP32 pour avoir accès au serveur local !**
+Vous n'avez plus qu'à saisir l'adresse IP indiquée précédemment dans votre navigateur de la manière suivante :
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Adresse_IP.png?raw=true)
 
-_Figure 2: Adresse IP précédente à rentrer dans le navigateur._
+_Figure 2: Adresse IP à saisir dans le navigateur._
+
+Une fois tout ceci effectué, vous verrez apparaître l'écran de contrôle du robot, les boutons sont surlignés (colorés) en rouge quand vous passez la souris dessus, de couleur verte quand vous pouvez activer un mouvement et de couleur grise quand votre clic entraînera l'arrêt d'un mouvement. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Server1_robot.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Server2_robot.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Server3_robot.png?raw=true)
+_Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
+
+[Sommaire](#sommaire_)
+<a name="developpement_f"/>
+
+## Développement
+
+Un robot holonome possède 4 roues indépendantes les unes des autres, il faut donc contrôler 4 moteurs indépendamments les uns des autres. Pour savoir quel moteur activer et comment l'activer vous pouvez vous pencher sur ce [projet](https://github.com/Clerbout-Francois/Kinematics_holonomic_robot_MATLAB) durant lequel j'ai simulé une vue de haut d'un robot holonome et ses déplacements en fonctions des entrées sur chaque moteur. Cela peut vous permettre de comprendre les instructions contenues dans mes différents codes.
+
+Dans ce README, je ne présenterai que le fonctionnement du programme robot_holonome_serveur_local.ino. Pour information, la fonction **ledcWrite** du programme robot_holonome_telephone.ino est équivalente à la fonction **digitalWrite** du programme robot_holonome_serveur_local.ino. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_1.png?raw=true)
+_Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
 
 ***
 <a name="english_version_"/>
@@ -119,6 +139,8 @@ _Figure 2: Adresse IP précédente à rentrer dans le navigateur._
 
 
 
+
+
 [Table of Contents](#table_of_contents)
 <a name="license_"/>
 
@@ -128,4 +150,7 @@ Please do not forget that this project is under [MIT license](https://choosealic
 
 
 
-[Table of Contents](#table_of_contents)
+[Top](#top_)
+<a name="liste_"/>
+
+# 
