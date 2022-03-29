@@ -26,7 +26,7 @@ Pour le moment, vous pouvez retrouver ce petit robot au sein du Fablab de JUNIA 
 
 ## Introduction
 
-Le but premier de ce robot est de permettre aux personnes intéressées par la robotique de pouvoir y toucher en construisant un robot holonome et peu coûteux (prix inférieur à 200 euros). Le second but est de permettre à des étudiants suivant des cours de protypage rapide de vite se plonger dans la conception d'un robot en ayant chaque pièce déjà dessinée, un code fonctionnel ainsi qu'un schéma électrique déjà réalisé. Vous trouverez donc sur cette page un manuel afin de concevoir ce robot du début à la fin.
+Le but premier de ce robot est de permettre aux personnes intéressées par la robotique de pouvoir y toucher en construisant un robot holonome et peu coûteux (prix inférieur à 200 euros). Le second but est de permettre à des étudiants suivant des cours de protypage rapide de vite se plonger dans la conception d'un robot en ayant chaque pièce déjà dessinée, un code fonctionnel ainsi qu'un schéma électrique déjà réalisé. Vous trouverez donc dans ce dépôt GitHub un manuel afin de concevoir ce robot du début à la fin.
 
 Les robots holonomes sont des robots, utilisant des roues omnidirectionnelles, qui peuvent se déplacer dans toutes les directions de l'espace plan, sans contrainte de trajectoires. Les robots de cette catégorie ont donc une liberté de mouvement totale et peuvent se déplacer dans des espaces exigus. Ils représentent l'avenir de la robotique mobile même s'ils sont plus coûteux à la production et à l'entretien.
 
@@ -147,13 +147,15 @@ Dans la suite du programme, on compare le contenu du lien dans lequel j'ai chois
 
 Dans la condition (if (header.indexOf(......))), on lit les informations contenues dans le header de la requête HTML. Si celle-ci est de la forme "GET /rotation_horaire/on" alors on rentre dans cette boucle de commandes. En écrivant la valeur HIGH sur les pins concernant les consignes de sens de rotation (32, 0, 26 et 2) cela indique au moteur qu'il doit tourner dans le sens des aiguilles d'une montre (et inversement pour LOW). En écrivant la valeur HIGH sur les pins concernant la valeur de rotation des moteurs (33, 4, 27 et 15) on fait tourner le moteur au maximum de sa vitesse (et on met le moteur à l'arrêt en écrivant la valeur LOW).
 
-Par étude de la cinématique, on sait que si tous les moteurs tournent dans le même sens et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre.
+Par étude de la cinématique, on sait que si tous les moteurs tournent dans le sens des aiguilles d'une montre et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre (et inversement).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_6.png?raw=true)
 
 _Figure 2: Capture d'écran des consignes pour la réalisation d'une diagonale vers l'avant et la droite du robot._
 
 Après étude de la cinématique de ce robot holonome, on sait qu'il faut que les moteurs 1 et 4 tournent et que les moteurs 2 et 3 sont à l'arrêt (c'est pourquoi on écrit la valeur LOW sur les valeurs de rotation des moteurs 2 et 3 tandis qu'on écrit la valeur HIGH sur les moteurs 1 et 4). De plus, il faut que le moteur 1 tourne dans le sens des aiguilles d'une montre (d'où la valeur HIGH pour le sens de rotation du moteur 1) et dans le sens inverse des aiguilles d'une montre pour le moteur 4 (d'où la valeur LOW).
+
+On procède de la même manière pour tous les mouvements du robot.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Explanation_7.png?raw=true)
 
@@ -173,7 +175,30 @@ On fonctionne de la même manière pour les 9 autres boutons.
 
 _Figure 2: Capture d'écran de la fermeture de la connexion._
 
-Ici, on ferme la connexion et onn l'indique sur le moniteur série.
+Ici, on ferme la connexion et on l'indique sur le moniteur série de l'IDE Arduino.
+
+[Sommaire](#sommaire_)
+<a name="conclusion_f"/>
+
+## Conclusion
+
+Ce projet a pour but de faire découvrir le prototypage rapide : la modélisation de pièces 3D avec des logiciels de CAO comme SOLIDWORKS pour l'impression ou la découpe laser, l'utilisation des logiciels d'impression 3D et de la découpeuse laser, la programmation C++ ainsi que la programmation WEB (HTML et CSS) et le contenu des requêtes du page WEB. 
+
+J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de découverte. Il en existe de nombreuses amélioriations et j'en suis conscient, dès que j'ai du temps je viendrai ajouter de nouveaux programmes dans ce dépôt GitHub. 
+
+N'hésitez pas à me contacter pour toute intervention auprès d'étudiants (plus ou moins jeunes !) ou pour tout retour concernant ce projet éducatif.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Robot.png?raw=true)
+
+_Figure 2: Photographie du robot._
+
+[Sommaire](#sommaire_)
+<a name="licence_f"/>
+
+## Licence
+
+Merci de ne pas oublier que ce projet est sous [une licence MIT ](https://choosealicense.com/licenses/mit/).
+
 
 ***
 <a name="english_version_"/>
