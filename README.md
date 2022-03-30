@@ -40,7 +40,7 @@ Si vous n'avez jamais utilisé de microcontrôleur ESP32 sur l'IDE Arduino, suiv
 Selon votre préférence, vous avez le choix de contrôler ce robot depuis votre téléphone ou depuis un serveur local.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Interface_Blynk.PNG?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Interface_Blynk.jpg?raw=true)
 
 _Figure 1: Captures d'écran des deux modes de contrôle du robot holonome (gauche : serveur local, droite : application sur téléphone)._
 
@@ -56,7 +56,7 @@ A vous de choisir maintenant : rendez-vous [ici](#telephone_) pour le contrôle 
 
 Afin de contrôler votre robot, vous aurez besoin de télécharger l'application Blynk sur l'App Store ou Google Play Store selon que vous soyez sous iOs (iPhone) ou Androïd.
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Blynk.PNG?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Blynk.jpg?raw=true)
 
 _Figure 2: Capture d'écran de l'application Blynk à télécharger._
 
