@@ -35,6 +35,8 @@ Les robots holonomes sont des robots, utilisant des roues omnidirectionnelles, q
 
 ## Instructions
 
+Si vous n'avez jamais utilisé de microcontrôleur ESP32 sur l'IDE Arduino, suivez ce [tutoriel](https://github.com/Clerbout-Francois/Use_ESP32_on_ArduinoIDE).
+
 Selon votre préférence, vous avez le choix de contrôler ce robot depuis votre téléphone ou depuis un serveur local.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/Server1_robot.png?raw=true)
