@@ -42,10 +42,10 @@ Selon votre préférence, vous avez le choix de contrôler ce robot depuis votre
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Interface_Blynk.jpg?raw=true)
 
-_Figure 1: Captures d'écran des deux modes de contrôle du robot holonome (gauche : serveur local, droite : application sur téléphone)._
+_Figure 1: Visualisation des deux modes de contrôle du robot holonome (haut : serveur local, bas : application sur téléphone)._
 
 
-Les instructions ne sont pas les mêmes selon que vous controlliez le robot depuis votre téléphone ou depuis un serveur local. Dans un premier temps je vous conseille de suivre la méthode du serveur local qui ne nécessite aucun paramètrage, il vous suffit juste de téléverser le programme robot_holonome_serveur_local.ino sur l'ESP32.
+Les instructions ne sont pas les mêmes selon que vous controlliez le robot depuis votre téléphone ou depuis un serveur local. Dans un premier temps je vous conseille de suivre la méthode du serveur local qui ne nécessite aucun paramètrage, il vous suffit juste de travailler avec le dossier data et de téléverser le code sur l'ESP32.
 
 A vous de choisir maintenant : rendez-vous [ici](#telephone_) pour le contrôle par téléphone et si vous préférez le serveur local alors rendez-vous [ici](#serveur_).
 
@@ -58,7 +58,7 @@ Afin de contrôler votre robot, vous aurez besoin de télécharger l'application
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Blynk.jpg?raw=true)
 
-_Figure 2: Capture d'écran de l'application Blynk à télécharger._
+_Figure 2: Application Blynk à télécharger._
 
 Il vous faudra ensuite créer un projet **(/!\ PARTIE TRES IMPORTANTE : il vous faudra noter certaines variables lors de la création du projet sur Blynk afin de venir les renseigner dans le fichier robot_holonome_telephone.ino et de lier l'application et le logiciel)**.
 
@@ -74,13 +74,13 @@ A COMPLETER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Serveur local
 
-Dans ce mode de contrôle, seul le programme robot_holonome_serveur_local.ino est nécessaire. Vous n'avez pas besoin de plus, l'amusement est très proche.
+Dans ce mode de contrôle, seul le dossier data est utile. Vous n'avez pas besoin de plus, l'amusement est très proche.
 
-Il vous faut télécharger ce programme et le téléverser sur l'ESP32. 
+Il vous faut télécharger ce dossier et le téléverser sur l'ESP32. 
 
 Veillez à ce que votre ESP32 se connecte à un réseau internet (partage de connexion, Wi-Fi...), pour cela il vous faut renseigner le nom de votre réseau ainsi que le mot de passe de votre réseau en début de programme...ne vous inquiétez pas car le code est suffisamment bien expliqué (enfin...je l'espère :sweat_smile:).
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Infos_réseau.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Network_credentials.png?raw=true)
 
 _Figure 2: Informations à renseigner afin de permettre à l'ESP32 de se connecter sur le réseau internet._
 
@@ -94,6 +94,8 @@ Le programme une fois téléversé, l'ESP32 va se connecter au réseau internet 
 
 _Figure 2: Moniteur série indiquant que l'ESP32 a réussi à se connecter au réseau internet._
 
+Vous pouvez observer les différents fichiers contenus dans la mémoire flash de l'ESP32 (/index.html, /script.js et /w3.css).
+
 **/!\ Equipement (ordinateur, tablette, téléphone, télé...) connecté sur le même réseau internet que l'ESP32 pour avoir accès au serveur local !**
 Vous n'avez plus qu'à saisir l'adresse IP indiquée précédemment dans votre navigateur de la manière suivante :
 
@@ -101,11 +103,10 @@ Vous n'avez plus qu'à saisir l'adresse IP indiquée précédemment dans votre n
 
 _Figure 2: Adresse IP à saisir dans le navigateur._
 
-Une fois tout ceci effectué, vous verrez apparaître l'écran de contrôle du robot, les boutons sont surlignés (colorés) en rouge quand vous passez la souris dessus, de couleur verte quand vous pouvez activer un mouvement et de couleur grise quand votre clic entraînera l'arrêt d'un mouvement. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois.
+Une fois tout ceci effectué vous verrez apparaître l'écran de contrôle du robot où les boutons verts permettent de lancer le mouvement du robot. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois (exemple : si vous cliquez sur une rotation horaire et que juste après vous cliquez sur le bouton permettant la marche avant du robot, celui-ci ne combinera pas les deux mouvements...il ne réalisera que la ligne droite).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server2_robot.png?raw=true)
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server3_robot.png?raw=true)
+
 _Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
 
 [Sommaire](#sommaire_)
@@ -113,78 +114,86 @@ _Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
 
 ## Développement
 
-Un robot holonome possède 4 roues indépendantes les unes des autres, il faut donc contrôler 4 moteurs indépendamments les uns des autres. Pour savoir quel moteur activer et comment l'activer vous pouvez vous pencher sur ce [projet](https://github.com/Clerbout-Francois/Kinematics_holonomic_robot_MATLAB) durant lequel j'ai simulé une vue de haut d'un robot holonome et ses déplacements en fonctions des entrées sur chaque moteur. Cela peut vous permettre de comprendre les instructions contenues dans mes différents codes.
+Un robot holonome possède 4 roues indépendantes les unes des autres, il faut donc contrôler 4 moteurs indépendamment les uns des autres. Pour savoir quel moteur activer et comment l'activer vous pouvez vous pencher sur ce [projet](https://github.com/Clerbout-Francois/Kinematics_holonomic_robot_MATLAB) durant lequel j'ai simulé une vue de haut d'un robot holonome et ses déplacements en fonctions des entrées sur chaque moteur. Cela peut vous permettre de comprendre les instructions contenues dans mes différents codes (/!\ l'orientation des galets n'est pas la même mais la cinématique est très proche de ce robot).
 
-Dans ce README, je ne présenterai que le fonctionnement du programme robot_holonome_serveur_local.ino (du début du code à la fin). Pour information, la fonction **ledcWrite** du programme robot_holonome_telephone.ino est équivalente à la fonction **digitalWrite** du programme robot_holonome_serveur_local.ino. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
+Dans ce README, je ne présenterai que le fonctionnement du programme permettant le développement du serveur local et du code C++ de contrôle du robot (du début du code à la fin) et le contrôle du robot depuis un équipement connecté sur le même réseau que le robot. Pour information, la fonction **ledcWrite** du programme robot_holonome_telephone.ino est équivalente à la fonction **digitalWrite** du programme main.cpp. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
+
+#### Fichier main.cpp
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_1.png?raw=true)
 
 _Figure 2: Capture d'écran de l'initialisation des variables d'état du serveur local._
 
-Ici, on initialise des variables de type String qui nous serviront par la suite lorsqu'on voudra connaître la valeur actuelle du serveur local (c'est-à-dire dans quel déplacement nous sommes actuellement).
+Ici, on initialise des variables de type int qui nous serviront par la suite afin de donner des consignes à chaque moteur. Vous pouvez observer que l'on envoie deux consignes à chaque moteur : une pour le sens de rotation (pins 32, 0, 26 et 2) et une pour la valeur de rotation du moteur (33, 4, 27 et 15). C'est pourquoi nous devons déclarer 8 pins en tant que sorties (OUTPUT), 2 par moteur, ce qui signifie que l'on va "écrire" des valeurs sur ces pins.
+
+La commande ````AsyncWebServer server(80);```` permet d'indiquer que le serveur local sera développé sur le port 80.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_2.png?raw=true)
 
-_Figure 2: Capture d'écran de la définiton du délai après lequel la connexion est coupée._
+_Figure 2: Initialisation de la vitesse du moniteur série et définitions des pins de l'ESP32 en tant que sorties._
 
-On définit un délai de 200 000 ms, soit 200 secondes (bien trop important, on pourrait le réduire à 30 000 ms = 30 secondes ce qui serait déjà suffisant) afin d'avoir le temps de pouvoir expliquer les déplacements du robot entre chaque clic de souris.
+On immobilise le robot en début de programme, d'où la valeur LOW pour chaque valeur de rotation de moteur.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_3.png?raw=true)
 
-_Figure 2: Capture d'écran du paramétrage des pins de l'ESP32._
+_Figure 2: Initialisation de la valeur des différentes pins de l'ESP32._
 
-Pour chaque moteur nous devons lui donner une consigne de sens de rotation ainsi qu'une valeur de rotation. C'est pourquoi nous devons déclarer 8 pins en tant que sorties (OUTPUT), 2 par moteur, ce qui signifie que l'on va "écrire" des valeurs sur ces pins.
+On démarre le protocole [SPIFFS](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html) et ensuite on ouvre tous les fichiers présents afin de vérifier leur présence dans la mémoire flash.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_4.png?raw=true)
 
-_Figure 2: Capture d'écran des commandes pour connecter l'ESP32 au réseau internet._
+_Figure 2: Démarrage du protocole SPIFFS et ouverture des fichiers existants (puis affichage)._
 
-Dans le premier bloc, on écrit sur le moniteur série de l'IDE Arduino que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande WiFi.begin(ssid, password) on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
+Dans le premier bloc, on écrit sur le moniteur série que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande WiFi.begin(ssid, password) on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." toutes les 500 ms sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_5.png?raw=true)
 
-_Figure 2: Capture d'écran des consignes pour une rotation dans le sens des aiguilles d'une montre du robot._
+_Figure 2: Commandes pour connecter l'ESP32 au réseau internet._
 
-Dans la suite du programme, on compare le contenu du lien dans lequel j'ai choisi de mettre des informations sur l'état du robot (ATTENTION : on peut le faire car ce ne ce sont pas des informations sensibles mais pour le bon développement web d'un site cette pratique est à bannir absolument !!! :scream:).
-
-Dans la condition (if (header.indexOf(......))), on lit les informations contenues dans le header de la requête HTML. Si celle-ci est de la forme "GET /rotation_horaire/on" alors on rentre dans cette boucle de commandes. En écrivant la valeur HIGH sur les pins concernant les consignes de sens de rotation (32, 0, 26 et 2) cela indique au moteur qu'il doit tourner dans le sens des aiguilles d'une montre (et inversement pour LOW). En écrivant la valeur HIGH sur les pins concernant la valeur de rotation des moteurs (33, 4, 27 et 15) on fait tourner le moteur au maximum de sa vitesse (et on met le moteur à l'arrêt en écrivant la valeur LOW).
-
-Par étude de la cinématique, on sait que si tous les moteurs tournent dans le sens des aiguilles d'une montre et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre (et inversement).
+On crée maintenant les requêtes asynchrones permettant au serveur d'envoyer des commandes au robot.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_6.png?raw=true)
 
-_Figure 2: Capture d'écran des consignes pour la réalisation d'une diagonale vers l'avant et la droite du robot._
+_Figure 2: Requêtes asynchrones pour les fichiers html, css et js._
 
-Après étude de la cinématique de ce robot holonome, on sait qu'il faut que les moteurs 1 et 4 tournent et que les moteurs 2 et 3 sont à l'arrêt (c'est pourquoi on écrit la valeur LOW sur les valeurs de rotation des moteurs 2 et 3 tandis qu'on écrit la valeur HIGH sur les moteurs 1 et 4). De plus, il faut que le moteur 1 tourne dans le sens des aiguilles d'une montre (d'où la valeur HIGH pour le sens de rotation du moteur 1) et dans le sens inverse des aiguilles d'une montre pour le moteur 4 (d'où la valeur LOW).
-
-On procède de la même manière pour tous les mouvements du robot.
+On crée la requête pour une rotation horaire, toutes les autres requêtes auront la même structure ce n'est que leur contenu qui différera. 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_7.png?raw=true)
 
-_Figure 2: Capture d'écran de la création du HTML et du style CSS de la page web._
+_Figure 2: Requête asynchrone pour une rotation horaire._
 
-Sur cette capture d'écran, vous pouvez retrouver la définition des classes button et button2 (pour les boutons de couleur verte et les boutons de couleur grise) ainsi que le ":hover" qui permet à un bouton sur lequel on pointe la souris de changer de couleur (rouge dans notre cas). Les différents id permettent de fixer la position des différents boutons sur la page web.
+Par étude de la cinématique, on sait que si tous les moteurs tournent dans le sens des aiguilles d'une montre et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre (et inversement).
+
+On procède de la même manière (étude de la cinématique puis définition du sens et de la valeur de rotation de chaque moteur) pour tous les mouvements du robot.
+
+#### Fichier index.html
+
+Sur cette capture d'écran, vous pouvez retrouver le début du fichier html, le nom de la page html ainsi que le bandeau du serveur local et la définiton des boutons de rotation.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8.png?raw=true)
 
-_Figure 2: Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour la rotation dans le sens des aiguilles d'une montre._
+_Figure 2: Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour les différentes rotations._
 
-Sur cette capture d'écran vous pouvez retrouver l'affichage du titre de la page web (premier bloc) et l'affichage du bouton de la rotation dans le sens des aiguilles d'une montre. C'est ici que l'on étudie la valeur de rotation_horaire, si la rotation horaire n'est pas active alors on peut l'activer en cliquant sur le bouton qui est de couleur verte et si la rotation est active alors le bouton est gris et on peut arrêter de mouvement en cliquant sur le bouton.
+On fonctionne de la même manière pour les 8 autres boutons, on ajoute juste des id qui permettent de placer les boutons sur la page.
 
-On fonctionne de la même manière pour les 9 autres boutons.
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_9.png?raw=true)
+_Figure 2: Affichage des différents boutons._
 
-_Figure 2: Capture d'écran de la fermeture de la connexion._
+#### Fichier script.js
 
-Ici, on ferme la connexion et on l'indique sur le moniteur série de l'IDE Arduino.
+Les différentes fonctions onButton sont définies dans le fichier .js de la manière suivante : on crée la requête Http et on la définit de manière asynchrone afin de pouvoir l'envoyer à tout moment.
+
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
+
+_Figure 2: Définitons des fonctions onButton._
 
 [Sommaire](#sommaire_)
 <a name="conclusion_f"/>
 
 ## Conclusion
 
-Ce projet a pour but de faire découvrir le prototypage rapide : la modélisation de pièces 3D avec des logiciels de CAO comme SOLIDWORKS pour l'impression ou la découpe laser, l'utilisation des logiciels d'impression 3D et de la découpeuse laser, la programmation C++ ainsi que la programmation WEB (HTML et CSS) et le contenu des requêtes du page WEB. 
+Ce projet a pour but de faire découvrir le prototypage rapide : la modélisation de pièces 3D avec des logiciels de CAO comme SOLIDWORKS pour l'impression ou la découpe laser, l'utilisation des logiciels d'impression 3D et de la découpeuse laser, la programmation C++ ainsi que la programmation WEB (HTML, JavaScript et CSS) et le contenu des requêtes d'une page WEB. 
 
 J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de découverte. Il en existe de nombreuses amélioriations et j'en suis conscient, dès que j'ai du temps je viendrai ajouter de nouveaux programmes dans ce dépôt GitHub. 
 
