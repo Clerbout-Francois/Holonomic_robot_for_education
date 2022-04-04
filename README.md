@@ -4,9 +4,9 @@
 
 Pour le moment, vous pouvez retrouver ce petit robot au sein du Fablab de JUNIA ISEN Lille...et bien sûr chez moi !! :monocle_face:
 
-**VERSION FRANCAISE :** vous pouvez retrouver toutes les explications en français [ici](#french_version_) pour réaliser ce projet. Amusez-vous bien !! :partying_face: Vous pouvez trouver les composants et leurs références en [bas](#liste_) de cette page.
+**VERSION FRANCAISE :** vous pouvez retrouver toutes les explications en français [ici](#french_version_) pour réaliser ce projet. Amusez-vous bien !! :partying_face: Vous pouvez trouver les composants et leurs références dans le fichier components.csv.
 
-**ENGLISH VERSION :** you can have all the details and explanation [here](#english_version_) if you want to realize this project. Enjoy !! :partying_face: You can find all the components and their references at the [end](#liste_) of this page.
+**ENGLISH VERSION :** you can have all the details and explanation [here](#english_version_) if you want to realize this project. Enjoy !! :partying_face: You can find all the components and their references in the components.csv file.
 
 
 <a name="french_version_"/>
@@ -109,7 +109,7 @@ Une fois tout ceci effectué vous verrez apparaître l'écran de contrôle du ro
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 
-_Figure 7 : Ecran de contrôle du robot et animations (interactions) possibles._
+_Figure 7 : Ecran de contrôle du robot._
 
 [Sommaire](#sommaire_)
 <a name="developpement_f"/>
@@ -124,7 +124,7 @@ Dans ce README, je ne présenterai que le fonctionnement des programme permettan
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_1.png?raw=true)
 
-_Figure 8 : Capture d'écran de l'initialisation des variables d'état du serveur local._
+_Figure 8 : Initialisation des constantes._
 
 Ici, on initialise des variables de type int qui nous serviront par la suite afin de donner des consignes à chaque moteur. Vous pouvez observer que l'on envoie deux consignes à chaque moteur : une pour le sens de rotation (pins 32, 0, 26 et 2) et une pour la valeur de rotation du moteur (33, 4, 27 et 15). C'est pourquoi nous devons déclarer 8 pins en tant que sorties (OUTPUT), 2 par moteur, ce qui signifie que l'on va "écrire" des valeurs sur ces pins.
 
@@ -188,7 +188,7 @@ Les différentes fonctions onButton sont définies dans le fichier .js de la man
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-_Figure 17 : Définitons des fonctions onButton._
+_Figure 17 : Définitions des fonctions onButton._
 
 [Sommaire](#sommaire_)
 <a name="conclusion_f"/>
@@ -248,7 +248,7 @@ Depending on your preference, you can control this robot from your phone or from
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Interface_Blynk.jpg?raw=true)
 
-_Figure 19 : Visualisation des deux modes de contrôle du robot holonome (haut : serveur local, bas : application sur téléphone)._
+_Figure 19 : Visualization of the two control modes of the holonomic robot (top : local server, bottom : application on phone)._
 
 
 The instructions are not the same depending on whether you control the robot from your phone or from a local server. At first I advise you to follow the local server method which does not require any settings, you just have to work with the data folder and upload the code to the ESP32.
@@ -264,7 +264,7 @@ In order to control your robot, you will need to download the Blynk app from the
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Blynk.jpg?raw=true)
 
-_Figure 20 : Application Blynk à télécharger._
+_Figure 20 : Blynk application to download._
 
 You will then need to create a project **(/!\ VERY IMPORTANT PART : you will have to note some variables when creating the project on Blynk in order to enter them in the Robot_phone.ino file and to link the application and the software)**.
 
@@ -276,7 +276,7 @@ Rendez vous sur le [site de Blynk](https://blynk.io/en/getting-started) et suive
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Blynk.png?raw=true)
 
-_Figure 21 : Informations à renseigner afin de permettre à l'ESP32 de se connecter avec Blynk._
+_Figure 21 : Information to be filled in to enable the ESP32 to connect with Blynk._
 
 <a name="server_"/>
 
@@ -290,7 +290,7 @@ Make sure that your ESP32 connects to an internet network (connection sharing, W
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Network_credentials.png?raw=true)
 
-_Figure 22 : Informations à renseigner afin de permettre à l'ESP32 de se connecter sur le réseau internet._
+_Figure 22 : Information to be filled in to enable the ESP32 to connect to the Internet._
 
 Once these informations have been entered, you can upload the programme to the ESP32.
 
@@ -300,7 +300,7 @@ Once the program has been uploaded, the ESP32 will connect to the specified inte
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Wi-Fi.png?raw=true)
 
-_Figure 23 : Moniteur série indiquant que l'ESP32 a réussi à se connecter au réseau internet._
+_Figure 23 : Serial monitor indicating that the ESP32 has successfully connected to the internet._
 
 You can see the different files contained in the flash memory of the ESP32 (/index.html, /script.js et /w3.css).
 
@@ -309,13 +309,13 @@ All you have to do is enter the IP address previously indicated in your browser 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/IP_Address.png?raw=true)
 
-_Figure 24 : Adresse IP à saisir dans le navigateur._
+_Figure 24 : IP address to be entered in the browser._
 
 Once all this is done you will see the robot control screen where the green buttons are used to start the robot movement. The program is written in such a way that only one movement can be made at a time (for example, if you click on a clockwise rotation and then click on the forward button, the robot will not combine the two movements...it will only make the straight line).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 
-_Figure 25 : Ecran de contrôle du robot et animations (interactions) possibles._
+_Figure 25 : Robot control screen._
 
 [Sommaire](#table_of_contents)
 <a name="development_"/>
@@ -330,7 +330,7 @@ In this README, I will only present the programs allowing the development of the
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_1.png?raw=true)
 
-_Figure 26 : Capture d'écran de l'initialisation des variables d'état du serveur local._
+_Figure 26 : Initialization of constants._
 
 Here, we initialise variables of type int which we will use later to give instructions to each motor. You can see that we send two instructions to each motor : one for the direction of rotation (pins 32, 0, 26 and 2) and one for the value of the motor rotation (33, 4, 27 and 15). This is why we have to declare 8 pins as outputs (OUTPUT), 2 per motor, which means that we will "write" values to these pins.
 
@@ -338,37 +338,37 @@ The command ```AsyncWebServer server(80);``` indicates that the local server wil
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_2.png?raw=true)
 
-_Figure 27 : Initialisation de la vitesse du moniteur série et définitions des pins de l'ESP32 en tant que sorties._
+_Figure 27 : Initialization of the serial monitor speed and definition of the ESP32 pins as outputs._
 
 The robot is stopped at the beginning of the program, hence the value LOW for each motor rotation value.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_3.png?raw=true)
 
-_Figure 28 : Initialisation de la valeur des différentes pins de l'ESP32._
+_Figure 28 : Initialization of the value of the different pins of the ESP32._
 
 We start the [SPIFFS protocol](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html) and then open all the files to check their presence in the flash memory of the ESP32.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_4.png?raw=true)
 
-_Figure 29 : Démarrage du protocole SPIFFS et ouverture des fichiers existants (puis affichage)._
+_Figure 29 : Start the SPIFFS protocol and open existing files (then display)._
 
 In the first block, we write to the serial monitor that we are connecting to the SSID (name of your internet network) and then by the command ```WiFi.begin(ssid, password);``` we try to connect with the information given. In the second block, we check if the connection is operational and until it is, we display "." every 500 ms on the serial monitor to show that the connection is being made. In the last block, we display the IP address that will be useful to connect from the browser.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_5.png?raw=true)
 
-_Figure 30 : Commandes pour connecter l'ESP32 au réseau internet._
+_Figure 30 : Commands for connecting the ESP32 to the Internet._
 
 We now create the asynchronous requests allowing the server to send commands to the robot.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_6.png?raw=true)
 
-_Figure 31 : Requêtes asynchrones pour les fichiers html, css et js._
+_Figure 31 : Asynchronous requests for html, css and js files._
 
 We create the query for an hourly rotation, all other queries will have the same structure, only their content will differ. 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_7.png?raw=true)
 
-_Figure 32 : Requête asynchrone pour une rotation horaire._
+_Figure 32 : Asynchronous request for clockwise rotation._
 
 By studying the kinematics, we know that if all the motors turn clockwise and at the same value, then the robot turns on itself clockwise (and vice versa).
 
@@ -380,13 +380,13 @@ In this screenshot, you can see the beginning of the html file, the name of the 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8.png?raw=true)
 
-_Figure 33 : Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour les différentes rotations._
+_Figure 33 : Display of the title of the web page and the display of the button for the different rotations._
 
 We work in the same way for the other 8 buttons, we just add ids that allow us to place the buttons on the page.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-_Figure 34 : Création des différents boutons._
+_Figure 34 : Creation of the different buttons._
 
 #### script.js file
 
@@ -394,14 +394,14 @@ The different onButton functions are defined in the .js file as follows: the Htt
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-_Figure 35 : Définitons des fonctions onButton._
+_Figure 35 : Definition of onButton functions._
 
 [Sommaire](#table_of_contents)
 <a name="conclusion_"/>
 
 ## Conclusion
 
-The aim of this project is to discover rapid prototyping: modelling 3D parts with CAD software such as SOLIDWORKS for printing or laser cutting, the use of 3D printing software and the laser cutter, C++ programming as well as WEB programming (HTML, JavaScript and CSS) and the content of the requests of a WEB page.
+The aim of this project is to discover rapid prototyping : modelling 3D parts with CAD software such as SOLIDWORKS for printing or laser cutting, the use of 3D printing software and the laser cutter, C++ programming as well as WEB programming (HTML, JavaScript and CSS) and the content of the requests of a WEB page.
 
 I hope to have been able to guide you step by step towards the realization of this discovery project. There are many improvements and I am aware of this, as soon as I have time I will add new programs to this GitHub repository. 
 
@@ -419,10 +419,3 @@ _Figure 36 : Robot photography._
 ## License
 
 Please do not forget that this project is under [MIT license](https://choosealicense.com/licenses/mit/).
-
-
-
-[Top](#top_)
-<a name="liste_"/>
-
-# 
