@@ -146,7 +146,7 @@ On démarre le protocole [SPIFFS](https://docs.espressif.com/projects/esp-idf/en
 
 _Figure 11 : Démarrage du protocole SPIFFS et ouverture des fichiers existants (puis affichage)._
 
-Dans le premier bloc, on écrit sur le moniteur série que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande WiFi.begin(ssid, password) on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." toutes les 500 ms sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
+Dans le premier bloc, on écrit sur le moniteur série que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande ```WiFi.begin(ssid, password);``` on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." toutes les 500 ms sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_5.png?raw=true)
 
