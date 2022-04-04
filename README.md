@@ -66,7 +66,7 @@ Pour cela, suivez les étapes suivantes :
 
 #### Création d'un projet
 
-Rendez vous sur le [site de Blynk](https://blynk.io/en/getting-started) et suivez les différentes instructions. Il vous faudra noter les valeurs suivantes pour les renseigner dans votre code Arduino : 
+Rendez vous sur le [site de Blynk](https://blynk.io/en/getting-started) et suivez les différentes instructions. Il vous faudra noter les valeurs suivantes pour les renseigner dans votre code Arduino (sur la photo ce sont les valeurs de mon projet, les vôtres différeront) : 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Blynk.png?raw=true)
 
