@@ -26,7 +26,7 @@ Pour le moment, vous pouvez retrouver ce petit robot au sein du Fablab de JUNIA 
 
 ## Introduction
 
-Le but premier de ce robot est de permettre aux personnes intéressées par la robotique de pouvoir y toucher en construisant un robot holonome et peu coûteux (prix inférieur à 200 euros). Le second but est de permettre à des étudiants suivant des cours de protypage rapide de vite se plonger dans la conception d'un robot en ayant chaque pièce déjà dessinée, un code fonctionnel ainsi qu'un schéma électrique déjà réalisé. Vous trouverez donc dans ce dépôt GitHub un manuel afin de concevoir ce robot du début à la fin.
+Le but premier de ce robot est de permettre aux personnes intéressées par la robotique de pouvoir s'y plonger en construisant un robot holonome et peu coûteux (prix inférieur à 200 euros). Le second but est de permettre à des étudiants suivant des cours de prototypage rapide de vite se plonger dans la conception d'un robot en ayant chaque pièce déjà dessinée, un code fonctionnel ainsi qu'un schéma électrique déjà réalisé. Vous trouverez donc dans ce dépôt GitHub un manuel afin de concevoir ce robot du début à la fin.
 
 Les robots holonomes sont des robots, utilisant des roues omnidirectionnelles, qui peuvent se déplacer dans toutes les directions de l'espace plan, sans contrainte de trajectoires. Les robots de cette catégorie ont donc une liberté de mouvement totale et peuvent se déplacer dans des espaces exigus. Ils représentent l'avenir de la robotique mobile même s'ils sont plus coûteux à la production et à l'entretien.
 
