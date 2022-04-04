@@ -253,7 +253,7 @@ _Figure 19 : Visualization of the two control modes of the holonomic robot (top 
 
 The instructions are not the same depending on whether you control the robot from your phone or from a local server. At first I advise you to follow the local server method which does not require any settings, you just have to work with the data folder and upload the code to the ESP32.
 
-The choice is yours now: go [here](#phone_) for phone control and if you prefer the local server then go [here](#server_).
+The choice is yours now : go [here](#phone_) for phone control and if you prefer the local server then go [here](#server_).
 
 
 <a name="phone_"/>
@@ -272,7 +272,7 @@ To do this, follow the step below :
 
 #### Creation of a project
 
-Rendez vous sur le [site de Blynk](https://blynk.io/en/getting-started) et suivez les différentes instructions. Il vous faudra noter les valeurs suivantes pour les renseigner dans votre code Arduino (sur la photo ce sont les valeurs de mon projet, les vôtres différeront) : 
+Go to the [Blynk website](https://blynk.io/en/getting-started) and follow the different instructions. You will have to note the following values to fill them in your Arduino code (on the picture these are the values of my project, yours will differ) : 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Blynk.png?raw=true)
 
@@ -294,7 +294,7 @@ _Figure 22 : Information to be filled in to enable the ESP32 to connect to the I
 
 Once these informations have been entered, you can upload the programme to the ESP32.
 
-(If this error occurs during an upload attempt : "A fatal error occurred: Failed to connect to ESP32 : Timed out waiting for packet header", press the BOOT button throughout the upload until "Connecting" disappears from the screen to make way for the upload).
+(If this error occurs during an upload attempt : "A fatal error occurred : Failed to connect to ESP32 : Timed out waiting for packet header", press the BOOT button throughout the upload until "Connecting" disappears from the screen to make way for the upload).
 
 Once the program has been uploaded, the ESP32 will connect to the specified internet network and you will see the following screen on your serial monitor showing the IP address of your local server :
 
