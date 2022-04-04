@@ -45,7 +45,7 @@ Selon votre préférence, vous avez le choix de contrôler ce robot depuis votre
 _Figure 1 : Visualisation des deux modes de contrôle du robot holonome (haut : serveur local, bas : application sur téléphone)._
 
 
-Les instructions ne sont pas les mêmes selon que vous controlliez le robot depuis votre téléphone ou depuis un serveur local. Dans un premier temps je vous conseille de suivre la méthode du serveur local qui ne nécessite aucun paramètrage, il vous suffit juste de travailler avec le dossier data et de téléverser le code sur l'ESP32.
+Les instructions ne sont pas les mêmes selon que vous contrôliez le robot depuis votre téléphone ou depuis un serveur local. Dans un premier temps, je vous conseille de suivre la méthode du serveur local qui ne nécessite aucun paramétrage, il vous suffit juste de travailler avec le dossier data et de téléverser le code sur l'ESP32.
 
 A vous de choisir maintenant : rendez-vous [ici](#telephone_) pour le contrôle par téléphone et si vous préférez le serveur local alors rendez-vous [ici](#serveur_).
 
@@ -105,7 +105,7 @@ Vous n'avez plus qu'à saisir l'adresse IP indiquée précédemment dans votre n
 
 _Figure 6 : Adresse IP à saisir dans le navigateur._
 
-Une fois tout ceci effectué vous verrez apparaître l'écran de contrôle du robot où les boutons verts permettent de lancer le mouvement du robot. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois (exemple : si vous cliquez sur une rotation horaire et que juste après vous cliquez sur le bouton permettant la marche avant du robot, celui-ci ne combinera pas les deux mouvements...il ne réalisera que la ligne droite).
+Une fois tout ceci effectué, vous verrez apparaître l'écran de contrôle du robot où les boutons verts permettent de lancer le mouvement du robot. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois (exemple : si vous cliquez sur une rotation horaire et que juste après vous cliquez sur le bouton permettant la marche avant du robot, celui-ci ne combinera pas les deux mouvements...il ne réalisera que la ligne droite).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 
@@ -118,7 +118,7 @@ _Figure 7 : Ecran de contrôle du robot._
 
 Un robot holonome possède 4 roues indépendantes les unes des autres, il faut donc contrôler 4 moteurs indépendamment les uns des autres. Pour savoir quel moteur activer et comment l'activer vous pouvez vous pencher sur ce [projet](https://github.com/Clerbout-Francois/Kinematics_holonomic_robot_MATLAB) durant lequel j'ai simulé une vue de haut d'un robot holonome et ses déplacements en fonctions des entrées sur chaque moteur. Cela peut vous permettre de comprendre les instructions contenues dans mes différents codes (/!\ l'orientation des galets n'est pas la même mais la cinématique est très proche de ce robot).
 
-Dans ce README, je ne présenterai que le fonctionnement des programme permettant le développement du serveur local, du code C++ de contrôle du robot (du début du code à la fin) et le contrôle du robot depuis un équipement connecté sur le même réseau que le robot. Pour information, la fonction **ledcWrite** du programme Robot_phone.ino est équivalente à la fonction **digitalWrite** du programme main.cpp. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
+Dans ce README, je ne présenterai que le fonctionnement des programmes permettant le développement du serveur local, du code C++ de contrôle du robot (du début du code à la fin) et le contrôle du robot depuis un équipement connecté sur le même réseau que le robot. Pour information, la fonction **ledcWrite** du programme Robot_phone.ino est équivalente à la fonction **digitalWrite** du programme main.cpp. Si besoin d'aide ou d'explications, n'hésitez pas à m'écrire, je serai ravi de vous aider et/ou d'échanger avec vous.
 
 #### Fichier main.cpp
 
@@ -197,7 +197,7 @@ _Figure 17 : Définitions des fonctions onButton._
 
 Ce projet a pour but de faire découvrir le prototypage rapide : la modélisation de pièces 3D avec des logiciels de CAO comme SOLIDWORKS pour l'impression ou la découpe laser, l'utilisation des logiciels d'impression 3D et de la découpeuse laser, la programmation C++ ainsi que la programmation WEB (HTML, JavaScript et CSS) et le contenu des requêtes d'une page WEB. 
 
-J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de découverte. Il en existe de nombreuses amélioriations et j'en suis conscient, dès que j'ai du temps je viendrai ajouter de nouveaux programmes dans ce dépôt GitHub. 
+J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de découverte. Il en existe de nombreuses améliorations et j'en suis conscient, dès que j'ai du temps je viendrai ajouter de nouveaux programmes dans ce dépôt GitHub. 
 
 N'hésitez pas à me contacter pour toute intervention auprès d'étudiants (plus ou moins jeunes !) ou pour tout retour concernant ce projet éducatif.
 
@@ -311,7 +311,7 @@ All you have to do is enter the IP address previously indicated in your browser 
 
 _Figure 24 : IP address to be entered in the browser._
 
-Once all this is done you will see the robot control screen where the green buttons are used to start the robot movement. The program is written in such a way that only one movement can be made at a time (for example, if you click on a clockwise rotation and then click on the forward button, the robot will not combine the two movements...it will only make the straight line).
+Once all this is done, you will see the robot control screen where the green buttons are used to start the robot movement. The program is written in such a way that only one movement can be made at a time (for example, if you click on a clockwise rotation and then click on the forward button, the robot will not combine the two movements...it will only make the straight line).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 
