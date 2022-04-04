@@ -1,0 +1,34 @@
+﻿/* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+
+/* Position of the button for the linear moves */
+#space_left {position : relative; left:-5% }
+#space_right {position : relative; left:5% }
+#space {position : relative; left:0% }
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+button{font:inherit;margin:0}
+button{overflow:visible}button{text-transform:none}
+button{-webkit-appearance:button}
+button::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring{outline:1px dotted ButtonText}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h3{font-size:24px}
+h1,h3{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+.w3-btn{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.w3-btn{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.w3-btn:disabled{cursor:not-allowed;opacity:0.3}:disabled *{pointer-events:none}
+.w3-btn:disabled:hover{box-shadow:none}
+.w3-ripple:active{opacity:0.5}.w3-ripple{transition:opacity 0s}
+.w3-card{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}.w3-large{font-size:18px!important}.w3-center{text-align:center!important}
+.w3-margin{margin:16px!important}
+.w3-padding-small{padding:4px 8px!important}.w3-padding{padding:8px 16px!important}.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+/* Colors */
+.w3-green{color:#fff!important;background-color:#4CAF50!important}
+.w3-red{color:#fff!important;background-color:#f44336!important}
+.w3-yellow{color:#000!important;background-color:#ffeb3b!important}
