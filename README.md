@@ -66,9 +66,11 @@ Pour cela, suivez les étapes suivantes :
 
 #### Création d'un projet
 
+Rendez vous sur le [site de Blynk](https://blynk.io/en/getting-started) et suivez les différentes instructions. Il vous faudra noter les valeurs suivantes pour les renseigner dans votre code Arduino : 
 
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Blynk.png?raw=true)
 
-A COMPLETER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+_Figure 3: Informations à renseigner afin de permettre à l'ESP32 de se connecter avec Blynk._
 
 <a name="serveur_"/>
 
@@ -82,7 +84,7 @@ Veillez à ce que votre ESP32 se connecte à un réseau internet (partage de con
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Network_credentials.png?raw=true)
 
-_Figure 2: Informations à renseigner afin de permettre à l'ESP32 de se connecter sur le réseau internet._
+_Figure 4: Informations à renseigner afin de permettre à l'ESP32 de se connecter sur le réseau internet._
 
 Une fois ces informations saisies, vous pouvez téléverser le programme sur l'ESP32.
 
@@ -90,24 +92,24 @@ Une fois ces informations saisies, vous pouvez téléverser le programme sur l'E
 
 Le programme une fois téléversé, l'ESP32 va se connecter au réseau internet renseigné et vous verrez apparaître l'écran suivant sur votre moniteur série qui vous indiquera l'adresse IP de votre serveur local :
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connexion_Wi-Fi.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Connection_Wi-Fi.png?raw=true)
 
-_Figure 2: Moniteur série indiquant que l'ESP32 a réussi à se connecter au réseau internet._
+_Figure 5: Moniteur série indiquant que l'ESP32 a réussi à se connecter au réseau internet._
 
 Vous pouvez observer les différents fichiers contenus dans la mémoire flash de l'ESP32 (/index.html, /script.js et /w3.css).
 
 **/!\ Equipement (ordinateur, tablette, téléphone, télé...) connecté sur le même réseau internet que l'ESP32 pour avoir accès au serveur local !**
 Vous n'avez plus qu'à saisir l'adresse IP indiquée précédemment dans votre navigateur de la manière suivante :
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Adresse_IP.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/IP_Address.png?raw=true)
 
-_Figure 2: Adresse IP à saisir dans le navigateur._
+_Figure 6: Adresse IP à saisir dans le navigateur._
 
 Une fois tout ceci effectué vous verrez apparaître l'écran de contrôle du robot où les boutons verts permettent de lancer le mouvement du robot. Le programme est écrit de manière à ce qu'un seul mouvement ne soit réalisable à la fois (exemple : si vous cliquez sur une rotation horaire et que juste après vous cliquez sur le bouton permettant la marche avant du robot, celui-ci ne combinera pas les deux mouvements...il ne réalisera que la ligne droite).
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Server1_robot.png?raw=true)
 
-_Figure 2: Ecran de contrôle du robot et animations (interactions) possibles._
+_Figure 7: Ecran de contrôle du robot et animations (interactions) possibles._
 
 [Sommaire](#sommaire_)
 <a name="developpement_f"/>
@@ -122,7 +124,7 @@ Dans ce README, je ne présenterai que le fonctionnement du programme permettant
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_1.png?raw=true)
 
-_Figure 2: Capture d'écran de l'initialisation des variables d'état du serveur local._
+_Figure 8: Capture d'écran de l'initialisation des variables d'état du serveur local._
 
 Ici, on initialise des variables de type int qui nous serviront par la suite afin de donner des consignes à chaque moteur. Vous pouvez observer que l'on envoie deux consignes à chaque moteur : une pour le sens de rotation (pins 32, 0, 26 et 2) et une pour la valeur de rotation du moteur (33, 4, 27 et 15). C'est pourquoi nous devons déclarer 8 pins en tant que sorties (OUTPUT), 2 par moteur, ce qui signifie que l'on va "écrire" des valeurs sur ces pins.
 
@@ -130,37 +132,37 @@ La commande ````AsyncWebServer server(80);```` permet d'indiquer que le serveur 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_2.png?raw=true)
 
-_Figure 2: Initialisation de la vitesse du moniteur série et définitions des pins de l'ESP32 en tant que sorties._
+_Figure 9: Initialisation de la vitesse du moniteur série et définitions des pins de l'ESP32 en tant que sorties._
 
 On immobilise le robot en début de programme, d'où la valeur LOW pour chaque valeur de rotation de moteur.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_3.png?raw=true)
 
-_Figure 2: Initialisation de la valeur des différentes pins de l'ESP32._
+_Figure 10: Initialisation de la valeur des différentes pins de l'ESP32._
 
 On démarre le protocole [SPIFFS](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html) et ensuite on ouvre tous les fichiers présents afin de vérifier leur présence dans la mémoire flash.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_4.png?raw=true)
 
-_Figure 2: Démarrage du protocole SPIFFS et ouverture des fichiers existants (puis affichage)._
+_Figure 11: Démarrage du protocole SPIFFS et ouverture des fichiers existants (puis affichage)._
 
 Dans le premier bloc, on écrit sur le moniteur série que l'on se connecte au SSID (nom de votre réseau internet) et ensuite par la commande WiFi.begin(ssid, password) on tente de se connecter avec les informations renseignées. Dans le second bloc, on vérifie si la connexion est opérationnelle et tant qu'elle ne l'est pas on affiche des "." toutes les 500 ms sur le moniteur série afin de montrer que la connexion est en train d'être réalisée. Dans le dernier bloc, on affiche l'adresse IP qui sera utile pour se connecter depuis le navigateur.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_5.png?raw=true)
 
-_Figure 2: Commandes pour connecter l'ESP32 au réseau internet._
+_Figure 12: Commandes pour connecter l'ESP32 au réseau internet._
 
 On crée maintenant les requêtes asynchrones permettant au serveur d'envoyer des commandes au robot.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_6.png?raw=true)
 
-_Figure 2: Requêtes asynchrones pour les fichiers html, css et js._
+_Figure 13: Requêtes asynchrones pour les fichiers html, css et js._
 
 On crée la requête pour une rotation horaire, toutes les autres requêtes auront la même structure ce n'est que leur contenu qui différera. 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_7.png?raw=true)
 
-_Figure 2: Requête asynchrone pour une rotation horaire._
+_Figure 14: Requête asynchrone pour une rotation horaire._
 
 Par étude de la cinématique, on sait que si tous les moteurs tournent dans le sens des aiguilles d'une montre et à la même valeur alors le robot tourne sur lui-même dans le sens des aiguilles d'une montre (et inversement).
 
@@ -172,13 +174,13 @@ Sur cette capture d'écran, vous pouvez retrouver le début du fichier html, le 
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8.png?raw=true)
 
-_Figure 2: Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour les différentes rotations._
+_Figure 15: Capture d'écran de l'affichage du titre de la page web et de l'affichage du bouton pour les différentes rotations._
 
 On fonctionne de la même manière pour les 8 autres boutons, on ajoute juste des id qui permettent de placer les boutons sur la page.
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-_Figure 2: Affichage des différents boutons._
+_Figure 16: Création des différents boutons._
 
 #### Fichier script.js
 
@@ -186,7 +188,7 @@ Les différentes fonctions onButton sont définies dans le fichier .js de la man
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Explanation_8bis.png?raw=true)
 
-_Figure 2: Définitons des fonctions onButton._
+_Figure 17: Définitons des fonctions onButton._
 
 [Sommaire](#sommaire_)
 <a name="conclusion_f"/>
@@ -201,7 +203,7 @@ N'hésitez pas à me contacter pour toute intervention auprès d'étudiants (plu
 
 ![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot.png?raw=true)
 
-_Figure 2: Photographie du robot._
+_Figure 18: Photographie du robot._
 
 [Sommaire](#sommaire_)
 <a name="licence_f"/>
