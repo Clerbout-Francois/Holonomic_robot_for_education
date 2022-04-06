@@ -201,8 +201,8 @@ J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de d
 
 N'hésitez pas à me contacter pour toute intervention auprès d'étudiants (plus ou moins jeunes !) ou pour tout retour concernant ce projet éducatif.
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.png?raw=true)
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.jpg?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.jpg?raw=true)
 
 _Figure 18 : Photographies du robot._
 
@@ -408,8 +408,8 @@ I hope to have been able to guide you step by step towards the realization of th
 
 Do not hesitate to contact me for any intervention with students (more or less young !) or for any feedback concerning this educational project.
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.png?raw=true)
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.jpg?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.jpg?raw=true)
 
 _Figure 36 : Robot photographs._
 
