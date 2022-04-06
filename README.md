@@ -88,7 +88,7 @@ _Figure 4 : Informations à renseigner afin de permettre à l'ESP32 de se connec
 
 Une fois ces informations saisies, vous pouvez téléverser le programme sur l'ESP32.
 
-(Si cette erreur se produit lors d'une tentative de téléchargement (téléversement) : "A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header", Appuyez sur le bouton BOOT tout au long du téléchargement jusqu'à ce que "Connecting" disparaisse de l'écran de l'IDE Arduino pour laisser place au téléchargement).
+(Si cette erreur se produit lors d'une tentative de téléchargement (téléversement) : "A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header", Appuyez sur le bouton BOOT tout au long du téléchargement jusqu'à ce que "Connecting" disparaisse du moniteur série pour laisser place au téléchargement).
 
 Le programme une fois téléversé, l'ESP32 va se connecter au réseau internet renseigné et vous verrez apparaître l'écran suivant sur votre moniteur série qui vous indiquera l'adresse IP de votre serveur local :
 
@@ -201,9 +201,10 @@ J'espère avoir pu vous guider pas à pas vers la réalisation de ce projet de d
 
 N'hésitez pas à me contacter pour toute intervention auprès d'étudiants (plus ou moins jeunes !) ou pour tout retour concernant ce projet éducatif.
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.png?raw=true)
 
-_Figure 18 : Photographie du robot._
+_Figure 18 : Photographies du robot._
 
 [Sommaire](#sommaire_)
 <a name="licence_f"/>
@@ -294,7 +295,7 @@ _Figure 22 : Information to be filled in to enable the ESP32 to connect to the I
 
 Once these informations have been entered, you can upload the programme to the ESP32.
 
-(If this error occurs during an upload attempt : "A fatal error occurred : Failed to connect to ESP32 : Timed out waiting for packet header", press the BOOT button throughout the upload until "Connecting" disappears from the screen to make way for the upload).
+(If this error occurs during an upload attempt : "A fatal error occurred : Failed to connect to ESP32 : Timed out waiting for packet header", press the BOOT button throughout the upload until "Connecting" disappears from the serial monitor to make way for the upload).
 
 Once the program has been uploaded, the ESP32 will connect to the specified internet network and you will see the following screen on your serial monitor showing the IP address of your local server :
 
@@ -407,9 +408,10 @@ I hope to have been able to guide you step by step towards the realization of th
 
 Do not hesitate to contact me for any intervention with students (more or less young !) or for any feedback concerning this educational project.
 
-![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo1.png?raw=true)
+![alt text](https://github.com/Clerbout-Francois/Holonomic_robot_for_education/blob/main/images_holonomic_robot_for_education/Robot_photo2.png?raw=true)
 
-_Figure 36 : Robot photography._
+_Figure 36 : Robot photographs._
 
 
 
